@@ -1,0 +1,50 @@
+.header {
+    font-size: 18px;
+    color: #fff;
+    font-family: Microsoft Yahei;
+    height: 60px;
+    line-height: 60px;
+    width: 100%;
+    background: #4C4C4C;
+    .logo {
+        display: inline-block;
+        margin-left: 20%;
+        a {
+            display: inline-block;
+            height: 70px;
+            img {
+                height: 34px;
+                margin: 13px 0;
+            }
+        }
+    }
+    .menu {
+        overflow: hidden;
+        display: inline-block;
+        margin-left: 10%;
+        .menu-list,
+        .menu-list li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            float: left;
+            a {
+                display:block; /* 将链接设为块级元素 */
+                padding:0px 60px; /* 设置内边距 */
+                background: transparent; /* 设置背景色 */
+                color:#fff; /* 设置文字颜色 */
+                text-decoration:none; /* 去掉下划线 */
+            }
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: #333333;
+            }
+            a.active {
+                background-color: #049694;
+            }
+        }
+    }
+}

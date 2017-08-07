@@ -1,0 +1,22 @@
+menu:
+    首页: http://www.monster1935.site
+    Blog: http://www.monster1935.site/blog/
+    实验室: http://www.monster1935.site/lab/
+    关于: http://www.monster1935.site/blog/about/
+
+favicon: /small-logo.png
+logo: http://oe7c74ud3.bkt.clouddn.com/logo.png
+name: monster1935的博客
+
+# Comment
+# e.g disqus: seansun
+disqus:
+duoshuo:
+netease: true
+
+# Analytics
+# google-analytics:
+ga:
+
+# Copyright Infomation
+startyear: 2015

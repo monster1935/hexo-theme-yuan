@@ -1,0 +1,14 @@
+div.logo
+    a(href="http://www.monster1935.site")
+        img(src=theme.logo, alt='monster1935')
+div.menu
+    ul.menu-list
+        - var icon = theme.icon
+        each value, key in theme.menu
+            li
+                - var re = /^(http|https):\/\/*/gi;
+                - var tar = re.test(value) ? "_blank" : "_self"
+                - var act = !re.test(value) && "/"+page.current_url === value
+                - var isActive = (key == "Blog")
+                a(class={active: isActive} href=url_for(value))
+                    span!= key
