@@ -1,21 +1,18 @@
 .header {
-    font-size: 18px;
+    font-size: 16px;
     color: #fff;
     font-family: Microsoft Yahei;
-    height: 60px;
-    line-height: 60px;
+    height: 50px;
+    line-height: 50px;
     width: 100%;
     background: #4C4C4C;
     .logo {
-        display: inline-block;
-        margin-left: 20%;
+        float: left;
+        margin-top: 10px;
+        margin-left: 5%;
         a {
             display: inline-block;
-            height: 70px;
-            img {
-                height: 34px;
-                margin: 13px 0;
-            }
+            height: 50px;
         }
     }
     .menu {
@@ -32,7 +29,7 @@
             float: left;
             a {
                 display:block; /* 将链接设为块级元素 */
-                padding:0px 60px; /* 设置内边距 */
+                padding:0px 40px; /* 设置内边距 */
                 background: transparent; /* 设置背景色 */
                 color:#fff; /* 设置文字颜色 */
                 text-decoration:none; /* 去掉下划线 */
