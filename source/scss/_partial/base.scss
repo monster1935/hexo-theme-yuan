@@ -24,9 +24,10 @@ body {
 .wrap {
     flex: 1;
     overflow: auto;
+    background: #eee;
     .wrap-inner {
-        max-width: 1000px;
         margin: 0 auto;
+        max-width: 1300px;
     }
 }
 .iconfont{

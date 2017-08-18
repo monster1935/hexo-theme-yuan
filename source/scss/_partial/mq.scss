@@ -1,5 +1,31 @@
 main.container {
     margin: 2em 10px;
+    display: flex;
+    flex-flow: row;
+    .side-wrap {
+        flex: 0 0 400px;
+        .about-wrap,
+        .recent-wrap {
+            background: #fff;
+            padding: 20px;
+            .post-item {
+                margin-bottom: 12px;
+                white-space:nowrap;
+                a {
+                    color: #049694;
+                    word-break: break-all
+                }
+            }
+            .read-more {
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+    }
+    .home.post-list {
+        flex: 1;
+        margin-right: 2em;
+    }
 }
 body{
     transition: transform .2s cubic-bezier(.4,.01,.165,.99),-webkit-transform .2s cubic-bezier(.4,.01,.165,.99);
