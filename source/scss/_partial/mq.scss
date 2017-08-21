@@ -4,6 +4,12 @@ main.container {
     flex-flow: row;
     .side-wrap {
         flex: 0 0 400px;
+        font-size: 14px;
+        p.module-title {
+            font-size: 16px;
+            border-left: 4px solid #049694;
+            padding-left: 6px;
+        }
         .about-wrap,
         .recent-wrap,
         .contact-me {
@@ -22,6 +28,12 @@ main.container {
             .read-more {
                 font-size: 14px;
                 text-align: center;
+                a {
+                    color: #999;
+                    &:hover {
+                        color: #333;
+                    }
+                }
             }
         }
         .contact-me {

@@ -1,5 +1,5 @@
 .home.post-list {
-    margin: 2em 0;
+    max-width: 1000px;
     .post-list-item {
         background: #fff;
         margin-bottom: 20px;
@@ -16,6 +16,7 @@
         }
     }
     .read-more {
+        font-size: 14px;
         color: #049694;
     }
 }

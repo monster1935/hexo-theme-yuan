@@ -1,8 +1,8 @@
 .post {
-    padding-top: 1em;
-    background: #fff;
+    max-width: 1000px;
     .post-block {
         padding: 20px 36px;
+        background: #fff;
     }
 }
 .post-list-item {
@@ -13,6 +13,7 @@
         }
         .post-info {
             float:right;
+            font-size: 14px;
             margin-right: 10px;
         }
     }

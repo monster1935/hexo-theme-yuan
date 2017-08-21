@@ -4,6 +4,27 @@ mixin postInfo(item)
         if item.from && (is_home() || is_post())
             a.post-from(href=item.from target="_blank" title=item.from) 翻译 · 原文地址
 
+
+//- pagination page
+mixin home()
+    - var prev = page.prev_link
+    - var next = page.next_link
+    .paginator
+        if page.prev
+            a.prev(href=url_for(prev))!= __('prev')
+        if page.next
+            a.next(href=url_for(next))!= __('next')
+
+//- pagination post
+mixin postPagination()
+    - var prev = page.prev ? page.prev.path : false;
+    - var next = page.next ? page.next.path : false;
+    .paginator
+        if prev
+            a.prev(href=url_for(prev))!= __('prev_post')
+        if next
+            a.next(href=url_for(next))!= __('next_post')
+
 //- Index Page
 mixin posts()
     ul.home.post-list
@@ -18,6 +39,7 @@ mixin posts()
                         != item.excerpt
                     a.read-more(href= url_for(item.path))!= __('more')
         - })
+        +home()
 
 //- Archive Page
 mixin postList()
@@ -108,3 +130,4 @@ mixin post(item)
                 +postInfo(item)
             .post-content
                 != item.content
+        +postPagination()
