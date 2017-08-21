@@ -5,9 +5,12 @@ main.container {
     .side-wrap {
         flex: 0 0 400px;
         .about-wrap,
-        .recent-wrap {
+        .recent-wrap,
+        .contact-me {
             background: #fff;
-            padding: 20px;
+            padding: 10px 20px;
+        }
+        .recent-wrap {
             .post-item {
                 margin-bottom: 12px;
                 white-space:nowrap;
@@ -21,8 +24,28 @@ main.container {
                 text-align: center;
             }
         }
+        .contact-me {
+            overflow: hidden;
+            padding: 10px 90px;
+        }
+        .contact-me,
+        .contact-me li {
+            list-style: none;
+            margin: 0;
+        }
+        .contact-me li {
+            float: left;
+            .iconfont {
+                font-size: 24px;
+                margin-right: 40px;
+            }
+            &:last-child .iconfont {
+                margin-right: 0;
+            }
+        }
     }
-    .home.post-list {
+    .home.post-list,
+    .post {
         flex: 1;
         margin-right: 2em;
     }

@@ -10,11 +10,27 @@ name: monster1935的博客
 # e.g disqus: seansun
 disqus:
 duoshuo:
-netease: 
+netease:
 
 # Analytics
 # google-analytics:
 ga:
+
+# about Infomation
+
+about: 学无止境，每天进步一点点。@monster1935
+
+way:
+    Github: http://github.com/monster1935
+    Segment: https://segmentfault.com/u/monster1935
+    Weibo: http://weibo.com/monster1935
+    Mail: mailto://liyb2014@163.com
+
+icon:
+    Github: icon-github
+    Weibo: icon-weibo
+    Segment: icon-sf
+    Mail: icon-mail
 
 # Copyright Infomation
 startyear: 2015

@@ -37,25 +37,35 @@ mixin postList()
                     != item.title
         - })
 
-// - Recent Page
+// - Side Page
 mixin recentPostList ()
     .side-wrap
         .about
             p.module-title 关于我
             div.about-wrap
-                p hello, this is monster
+                p.about-content
+                    != theme.about
         .recent-post-list
             p.module-title 近期文章
             div.recent-wrap
-                - page.posts.each(function (item) {
+                - var recentPosts = site.posts.slice().sort(function (a, b) {
+                    return Date.parse(b.date) - Date.parse(a.date);
+                - }).slice(0, 10);
+                - recentPosts.each(function (item) {
                     .post-item
                         a.post-title-link(href= url_for(item.path))
                             != item.title
                 - })
                 div.read-more
                     a.read-more-link(href="http://www.monster1935.site/blog/archives") 查看更多
-
-
+        .contact-list
+            p.module-title 联系我
+            ul.contact-me
+                - var icon = theme.icon
+                each value, key in theme.way
+                    li
+                        a(href=url_for(value) title=key target="_blank")
+                            i.iconfont(class=icon[key])
 
 //- About Page
 mixin about(item)
