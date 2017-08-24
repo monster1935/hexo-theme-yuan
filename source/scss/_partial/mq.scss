@@ -3,12 +3,17 @@ main.container {
     display: flex;
     flex-flow: row;
     .side-wrap {
-        flex: 0 0 400px;
+        flex: 0 0 300px;
+        overflow: hidden;
         font-size: 14px;
         p.module-title {
             font-size: 16px;
             border-left: 4px solid #049694;
             padding-left: 6px;
+        }
+        .about,
+        .recent-post-list {
+            margin-bottom: 20px;
         }
         .about-wrap,
         .recent-wrap,
@@ -20,6 +25,8 @@ main.container {
             .post-item {
                 margin-bottom: 12px;
                 white-space:nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
                 a {
                     color: #049694;
                     word-break: break-all
@@ -38,7 +45,7 @@ main.container {
         }
         .contact-me {
             overflow: hidden;
-            padding: 10px 90px;
+            padding: 10px 40px;
         }
         .contact-me,
         .contact-me li {

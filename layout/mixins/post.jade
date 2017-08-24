@@ -1,9 +1,35 @@
 mixin postInfo(item)
     .post-info
-            != full_date(item.date, 'll')
+        .post-info-item
+            i.iconfont.icon-time
+            span
+                != full_date(item.date, 'll')
+        .post-info-item
+            i.iconfont.icon-category
+            - item.categories.each(function (content) {
+                span
+                    != content.name
+            -})
+        .post-info-item
+            i.iconfont.icon-tag
+            - item.tags.each( function (content) {
+                span.tag
+                    != content.name
+            - })
         if item.from && (is_home() || is_post())
             a.post-from(href=item.from target="_blank" title=item.from) 翻译 · 原文地址
 
+mixin postTags(item)
+    .post-tag
+        - item.tags.each( function (content) {
+            span
+                != content.name
+        - })
+    .post-categories
+        - item.categories.each(function (content) {
+            span
+                != content.name
+        -})
 
 //- pagination page
 mixin home()
