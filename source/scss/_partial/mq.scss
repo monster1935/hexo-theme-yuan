@@ -15,11 +15,12 @@ main.container {
         .recent-post-list {
             margin-bottom: 20px;
         }
-        .about-wrap,
-        .recent-wrap,
-        .contact-me {
+        .about,
+        .recent-post-list,
+        .contact-list {
             background: #fff;
             padding: 10px 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,.1);
         }
         .recent-wrap {
             .post-item {
@@ -51,6 +52,7 @@ main.container {
         .contact-me li {
             list-style: none;
             margin: 0;
+            padding: 0;
         }
         .contact-me li {
             float: left;
