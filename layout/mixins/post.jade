@@ -5,17 +5,22 @@ mixin postInfo(item)
             span
                 != full_date(item.date, 'll')
         .post-info-item
-            i.iconfont.icon-category
-            - item.categories.each(function (content) {
-                span
-                    != content.name
-            -})
+            - if (item.categories && item.categories.length) {
+                i.iconfont.icon-category
+                - item.categories.each(function (content) {
+                    span
+                        != content.name
+                -})
+            - }
+
         .post-info-item
-            i.iconfont.icon-tag
-            - item.tags.each( function (content) {
-                span.tag
-                    != content.name
-            - })
+            - if (item.tags && item.tags.length) {
+                i.iconfont.icon-tag
+                - item.tags.each( function (content) {
+                    span.tag
+                        != content.name
+                - })
+            - }
         if item.from && (is_home() || is_post())
             a.post-from(href=item.from target="_blank" title=item.from) 翻译 · 原文地址
 
@@ -71,6 +76,8 @@ mixin posts()
 mixin postList()
     .archive
         h1.post-title 归档
+        p.post-desp
+            != '共计'+ page.posts.length +'篇日志'
         - var year = 0;
         - var change = false;
         - page.posts.each(function (item) {
@@ -85,16 +92,56 @@ mixin postList()
                 a.post-title-link(href= url_for(item.path))
                     != item.title
         - })
+// - category page
+mixin categoryList()
+    .categories
+        h1.categories-title
+            != page.title
+        div.categories-wrap
+            - site.categories.each(function (item) {
+                .categories-item
+                    a.categories-item-link(href= url_for(item.path))
+                        != item.name + ' ('+ item.length + ')'
+            - })
+// - tag-page
+mixin tagList()
+    .tags
+        h1.tags-title
+            != page.title
+        div.tags-wrap
+            - site.tags.each(function (item) {
+                .tags-item
+                    a.tags-item-link(href= url_for(item.path))
+                        != item.name + ' ('+ item.length + ')'
+            - })
+
+//- About Page
+mixin about(item)
+    .about
+        h1.post-title
+            != item.title
+        div.about-wrap
+            != item.content
 
 // - Side Page
 mixin recentPostList ()
     .side-wrap
-        .about
+        .about-side.side-wrap-item
             p.module-title 关于我
             div.about-wrap
                 p.about-content
                     != theme.about
-        .recent-post-list
+                div.read-more
+                    a.read-more-link(href=url_for("/about")) 查看更多
+        .categories-side.side-wrap-item
+            p.module-title 文章分类
+            div.categories-wrap
+                - site.categories.each(function (item) {
+                    .categories-item
+                        a.categories-item-link(href= url_for(item.path))
+                            != item.name + ' ('+ item.length + ')'
+                - })
+        .recent-post-list.side-wrap-item
             p.module-title 近期文章
             div.recent-wrap
                 - var recentPosts = site.posts.slice().sort(function (a, b) {
@@ -106,8 +153,18 @@ mixin recentPostList ()
                             != item.title
                 - })
                 div.read-more
-                    a.read-more-link(href="http://www.monster1935.site/blog/archives") 查看更多
-        .contact-list
+                    a.read-more-link(href=url_for("/archives")) 查看更多
+        .tags-side.side-wrap-item
+            p.module-title 标签云
+            div.tags-wrap
+                - site.tags.slice(0,25).each(function(item) {
+                    a.tags-item-link(href=url_for(item.path))
+                        != item.name + '('+ item.length+')'
+                - })
+                div.read-more
+                    a.read-more-link(href=url_for("/tags")) 查看更多
+
+        .contact-list.side-wrap-item
             p.module-title 联系我
             ul.contact-me
                 - var icon = theme.icon
@@ -115,37 +172,6 @@ mixin recentPostList ()
                     li
                         a(href=url_for(value) title=key target="_blank")
                             i.iconfont(class=icon[key])
-
-//- About Page
-mixin about(item)
-    .post
-        article.post-block
-            h1.post-title
-                != item.title
-            .post-content
-                != item.content
-
-//- Lab Page
-mixin lab(item)
-    .post
-        article.post-block
-            h1.post-title
-                != item.title
-            .post-content
-                div.lab
-                    div.lab-box
-                        - config.projects.forEach(function(item, index) {
-                            div.lab-box-block
-                                a(href=url_for(item.link))
-                                    img(src=item.imgPath)
-                                div.lab-block-content
-                                    div.lab-block-title
-                                        a(href=url_for(item.link))
-                                            != item.title
-                                    div.lab-block-desp
-                                        != item.description
-
-                        - })
 
 //- Post Page
 mixin post(item)

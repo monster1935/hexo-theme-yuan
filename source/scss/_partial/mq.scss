@@ -11,27 +11,13 @@ main.container {
             border-left: 4px solid #049694;
             padding-left: 6px;
         }
-        .about,
-        .recent-post-list {
-            margin-bottom: 20px;
-        }
-        .about,
-        .recent-post-list,
-        .contact-list {
+        .side-wrap-item {
             background: #fff;
             padding: 10px 20px;
             box-shadow: 0 1px 3px rgba(0,0,0,.1);
-        }
-        .recent-wrap {
-            .post-item {
-                margin-bottom: 12px;
-                white-space:nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                a {
-                    color: #049694;
-                    word-break: break-all
-                }
+            margin-bottom: 20px;
+            &:last-child {
+                margin-bottom: 0;
             }
             .read-more {
                 font-size: 14px;
@@ -40,6 +26,52 @@ main.container {
                     color: #999;
                     &:hover {
                         color: #333;
+                    }
+                }
+            }
+        }
+        .categories-wrap {
+            .categories-item {
+                margin-bottom: 12px;
+                a {
+                    color: #333;
+                }
+                &:hover {
+                    a {
+                        color: #049694;
+                    }
+                }
+            }
+        }
+        .recent-wrap {
+            .post-item {
+                margin-bottom: 12px;
+                white-space:nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                a {
+                    color: #333;
+                    word-break: break-all
+                }
+                &:hover {
+                    a.post-title-link{
+                        color: #049694;
+                    }
+                }
+            }
+        }
+        .tags-side {
+            .tags-wrap {
+                a.tags-item-link {
+                    color: #666;
+                    background: #eee;
+                    border-radius: 3px;
+                    display: inline-block;
+                    margin: 4px;
+                    padding: 2px 4px;
+                    &:hover {
+                        color: #fff;
+                        background: #049694;
                     }
                 }
             }

@@ -1,0 +1,17 @@
+.about {
+    max-width: 1000px;
+    .post-title {
+        margin: 0.65em 0;
+        color: #2c3e50;
+        font-size: 1.5em;
+    }
+    .about-wrap {
+        background: #fff;
+        padding: 20px;
+        a {
+            color: #049694;
+            word-break: break-all;
+        }
+    }
+
+}

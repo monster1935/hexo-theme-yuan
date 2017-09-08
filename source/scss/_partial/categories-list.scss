@@ -1,0 +1,17 @@
+.categories {
+    max-width: 1000px;
+    .categories-title {
+        margin: 0.65em 0;
+        color: #2c3e50;
+        font-size: 1.5em;
+    }
+    .categories-item {
+        font-size: 16px;
+        margin-bottom: 10px;
+        &:hover {
+            a.categories-item-link {
+                color: #049694;
+            }
+        }
+    }
+}

@@ -30,6 +30,7 @@ body {
     .wrap-inner {
         margin: 0 auto;
         max-width: 1300px;
+        min-width: 800px;
         flex: 1;
     }
     footer {
@@ -70,7 +71,7 @@ a.post-title-link:hover {
 }
 
 hr {
-    border: 0;
+    border: 1;
 }
 
 code {
