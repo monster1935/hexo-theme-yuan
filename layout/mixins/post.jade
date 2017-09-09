@@ -89,7 +89,7 @@ mixin postList()
             .post-item
                 span.post-time
                     != full_date(item.date, 'll')
-                a.post-title-link(href= url_for(item.path))
+                a.post-title-link(href=url_for(item.path))
                     != item.title
         - })
 // - category page
@@ -100,7 +100,7 @@ mixin categoryList()
         div.categories-wrap
             - site.categories.each(function (item) {
                 .categories-item
-                    a.categories-item-link(href= url_for(item.path))
+                    a.categories-item-link(href=url_for(item.path))
                         != item.name + ' ('+ item.length + ')'
             - })
 // - tag-page
@@ -111,7 +111,7 @@ mixin tagList()
         div.tags-wrap
             - site.tags.each(function (item) {
                 .tags-item
-                    a.tags-item-link(href= url_for(item.path))
+                    a.tags-item-link(href=url_for(item.path))
                         != item.name + ' ('+ item.length + ')'
             - })
 
